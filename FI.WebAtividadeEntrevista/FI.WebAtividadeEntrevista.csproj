@@ -125,7 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BeneficiarioModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\Validations\CPFValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -320,8 +322,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+	<Content Include="Views\Cliente\Alterar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cliente\Alterar.cshtml" />
     <Content Include="Views\Cliente\Forms.cshtml" />
     <Content Include="Views\Cliente\Incluir.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
