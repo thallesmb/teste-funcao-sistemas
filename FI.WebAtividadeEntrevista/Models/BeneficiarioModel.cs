@@ -29,6 +29,6 @@ namespace FI.WebAtividadeEntrevista.Models
         /// <summary>
         /// Action
         /// </summary>
-        public string Acao { get; set; }
+        public string Action { get; set; }
     }
 }

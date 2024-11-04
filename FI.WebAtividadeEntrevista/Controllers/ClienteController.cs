@@ -35,9 +35,6 @@ namespace WebAtividadeEntrevista.Controllers
                 erros = (from item in ModelState.Values
                          from error in item.Errors
                          select error.ErrorMessage).ToList();
-
-                Response.StatusCode = 400;
-                return Json(string.Join(Environment.NewLine, erros));
             }
             else
             {
@@ -133,13 +130,13 @@ namespace WebAtividadeEntrevista.Controllers
                     {
                         foreach (BeneficiarioModel beneficiario in model.Beneficiarios)
                         {
-                            if (beneficiario.Acao == "Remove") // Remove sem precisar verificar CPF, pois poderia ocorrer um update (alterando cpf) e logo em seguida um remove via modal.
+                            if (beneficiario.Action == "Remove") // Remove sem precisar verificar CPF, pois poderia ocorrer um update (alterando cpf) e logo em seguida um remove via modal.
                             {
                                 boBeneficiario.Excluir(beneficiario.Id);
                             }
                             else if (CPFValidation.IsValid(beneficiario.CPF)) // Valida o CPF antes de inserir ou alterar cada beneficiario (CPF duplicado já é validado no JS).
                             {
-                                if (beneficiario.Acao == "Register")
+                                if (beneficiario.Action == "Register")
                                 {
                                     boBeneficiario.Incluir(new Beneficiario()
                                     {
@@ -148,7 +145,7 @@ namespace WebAtividadeEntrevista.Controllers
                                         ClienteId = model.Id
                                     });
                                 }
-                                else if (beneficiario.Acao == "Update")
+                                else if (beneficiario.Action == "Update")
                                 {
                                     boBeneficiario.Alterar(new Beneficiario()
                                     {
