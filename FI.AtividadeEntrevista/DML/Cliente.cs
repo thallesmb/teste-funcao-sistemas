@@ -65,6 +65,6 @@ namespace FI.AtividadeEntrevista.DML
         /// <summary>
         /// Lista de beneficiários
         /// </summary>
-        public List<Beneficiario> Beneficiarios { get; set; }
+        public List<Beneficiario> Beneficiarios { get; set; } = new List<Beneficiario>();
     }    
 }
